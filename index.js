@@ -61,7 +61,7 @@ async function getAIResponse(userId, userMessage) {
   if (conversations[userId].length > 20) conversations[userId] = conversations[userId].slice(-20);
 
   const response = await anthropic.messages.create({
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-5',
     max_tokens: 500,
     system: SYSTEM_PROMPT,
     messages: conversations[userId]
