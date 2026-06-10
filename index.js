@@ -87,6 +87,7 @@ app.get('/webhook', (req, res) => {
 // Receive messages
 app.post('/webhook', async (req, res) => {
   res.sendStatus(200);
+  console.log('Webhook recibido:', JSON.stringify(req.body, null, 2));
   const body = req.body;
   if (body.object !== 'whatsapp_business_account') return;
   const entry = body.entry?.[0]?.changes?.[0]?.value;
